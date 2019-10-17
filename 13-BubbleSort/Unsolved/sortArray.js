@@ -67,3 +67,34 @@ var unsortedArr = [
   292, 332, 209, 244, 196, 179, 472, 279, 40, 486, 270, 185,
   181, 485, 495, 81, 169, 294, 79, 400, 92, 104, 249
 ];
+
+ document.getElementById('start').innerHTML=unsortedArr ;
+
+ document.getElementById('go').addEventListener("click",function(){
+  function swap(items, firstIndex, secondIndex){
+    var temp = items[firstIndex];
+    items[firstIndex] = items[secondIndex];
+    items[secondIndex] = temp;
+}
+
+function bubbleSort(items){
+
+    var i, j, k = 0
+
+    for (i=0; i < items.length; i++){
+        for (j=0, k=items.length-i; j < k; j++){
+            if (items[j] > items[j+1]){
+                swap(items, j, j+1);
+            }
+        }
+    }
+
+    return items;
+}
+
+bubbleSort(unsortedArr);
+document.getElementById('result').innerHTML=unsortedArr;
+ 
+ });
+
+ 
