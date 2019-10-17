@@ -28,12 +28,27 @@
   <script type="text/javascript">
     // The below code fills in the first row of the table
     var movie = "Mr. Nobody";
+    
     var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
-
+    
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+      
+      $('tbody').append('<tr></tr>')
+
+      $('tbody>tr:eq(0)').append('<td></td>')
+      $('tbody>tr:eq(0)').append('<td></td>')
+      $('tbody>tr:eq(0)').append('<td></td>')
+      
+
+      $('tbody>tr:eq(0)>td:eq(0)').append(response.Title)
+    
+      $('tbody>tr:eq(0)>td:eq(1)').append(response.Year)
+      
+      $('tbody>tr:eq(0)>td:eq(2)').append(response.Actors)
+      
 
       // Obtain a reference to the tbody element in the DOM
       // Create and save a reference to new empty table row
@@ -42,6 +57,54 @@
       // Append the table row to the tbody element
     });
 
+    var movie = "Joker";
+    
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      
+      $('tbody').append('<tr></tr>')
+
+      $('tbody>tr:eq(1)').append('<td></td>')
+      $('tbody>tr:eq(1)').append('<td></td>')
+      $('tbody>tr:eq(1)').append('<td></td>')
+      
+
+      $('tbody>tr:eq(1)>td:eq(0)').append(response.Title)
+  1
+      $('tbody>tr:eq(1)>td:eq(1)').append(response.Year)
+      
+      $('tbody>tr:eq(1)>td:eq(2)').append(response.Actors)
+    });
+    
+
+
+    var movie = "Judy";
+    
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      
+      $('tbody').append('<tr></tr>')
+
+      $('tbody>tr:eq(2)').append('<td></td>')
+      $('tbody>tr:eq(2)').append('<td></td>')
+      $('tbody>tr:eq(2)').append('<td></td>')
+      
+
+      $('tbody>tr:eq(2)>td:eq(0)').append(response.Title)
+  1
+      $('tbody>tr:eq(2)>td:eq(1)').append(response.Year)
+      
+      $('tbody>tr:eq(2)>td:eq(2)').append(response.Actors)
+    });
+    
     // Repeat the above logic to add rows for two more movies of your choice
 
     // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
